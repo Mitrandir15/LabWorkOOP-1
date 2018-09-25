@@ -39,11 +39,11 @@ private:
 	double Candidate = 0;
 
 	//допоміжні функції до методу полярних координат
-	void FirstIteration(int i);
-	void SecondIteration(double FirstValue, double SecondValue, int i);
+	void PolarFirstIteration(int i);
+	void PolarSecondIteration(double FirstValue, double SecondValue, int i);
 
 	//допоміжна функція до 8-ого методу
-	double Iteration2(double FirstValue, double SecondValue);
+	double Iteration8(double FirstValue, double SecondValue);
 
 	//допоміжна функція до 10-ого методу
 	double ArensFirstIteration();

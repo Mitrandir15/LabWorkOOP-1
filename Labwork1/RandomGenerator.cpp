@@ -179,25 +179,25 @@ void RandomGenerator::PolarCoordinateMethod()
 	QuadraticCongruentialMethod();
 
 	for (int i = 0; i < 50; i++)
-		FirstIteration(i);
+		PolarFirstIteration(i);
 
 	Statistics(FrequncyStorage, 2);
 }
 
-void RandomGenerator::FirstIteration(int i)
+void RandomGenerator::PolarFirstIteration(int i)
 {
 	x = SecondStorage[1 + rand() % 100] * 2 - 1;
 	y = SecondStorage[1 + rand() % 100] * 2 - 1;
-	SecondIteration(x, y, i);
+	PolarSecondIteration(x, y, i);
 }
 
-void RandomGenerator::SecondIteration(double x, double y, int i)
+void RandomGenerator::PolarSecondIteration(double x, double y, int i)
 {
 	{
 		double Sum = x * x + y * y;
 
 		if (Sum >= 1)
-			FirstIteration(i);
+			PolarFirstIteration(i);
 		else
 		{
 			x = x * pow((-2 * log(Sum) / Sum), 0.5);
@@ -215,12 +215,12 @@ void RandomGenerator::MethodOfIntegralRelations()
 	Xn = 0;
 
 	for (int i = 0; i < 100; i++)
-		FrequncyStorage[i] = Iteration2(FirstStorage[0 + rand() % 100], FirstStorage[0 + rand() % 100]);
+		FrequncyStorage[i] = Iteration8(FirstStorage[0 + rand() % 100], FirstStorage[0 + rand() % 100]);
 
 	Statistics(FrequncyStorage, 2);
 }
 
-double RandomGenerator::Iteration2(double x, double y)
+double RandomGenerator::Iteration8(double x, double y)
 {
 	bool check;
 	Xn = pow(8 - M_E, 0.5)*((x - 0.5) / y);
@@ -229,7 +229,7 @@ double RandomGenerator::Iteration2(double x, double y)
 	if (check)
 		return Xn;
 	else
-		Xn = Iteration2(FirstStorage[0 + rand() % 100], FirstStorage[0 + rand() % 100]);
+		Xn = Iteration8(FirstStorage[0 + rand() % 100], FirstStorage[0 + rand() % 100]);
 }
 
 void RandomGenerator::LogarithmMethod()
