@@ -16,7 +16,6 @@ public:
 	void LogarithmMethod();
 	void ArensMethod();
 	double ArensSecondIteration(double Value);
-	
 
 	void StaticticsForLinearMethod();
 	void StaticticsForQuadraticMethod();
