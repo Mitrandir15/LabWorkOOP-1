@@ -15,7 +15,6 @@ public:
 	void MethodOfIntegralRelations();
 	void LogarithmMethod();
 	void ArensMethod();
-	double ArensSecondIteration(double Value);
 
 	void StaticticsForLinearMethod();
 	void StaticticsForQuadraticMethod();
@@ -45,6 +44,7 @@ private:
 	//допоміжна функція до 8-ого методу
 	double Iteration8(double FirstValue, double SecondValue);
 
-	//допоміжна функція до 10-ого методу
+	//допоміжні функції до 10-ого методу
 	double ArensFirstIteration();
+	double ArensSecondIteration(double x);
 };
