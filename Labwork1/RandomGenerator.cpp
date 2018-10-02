@@ -18,18 +18,16 @@ void RandomGenerator::Frequency(double Storage[100], int VariantOfDivision)
 	else if (VariantOfDivision == 2)
 	{
 		double LeftBorder = -3, RightBorder = -2.4;
-		int CurrentStoragePosition = 0;
 
 		for (int i = 0; i < 10; i++)
 		{
 			for (int j = 0; j < 100; j++)
 				if (Storage[j] >= LeftBorder && Storage[j] <= RightBorder)
-					Division[CurrentStoragePosition]++;
+					Division[i]++;
+			LeftBorder += 0.6;
+			RightBorder += 0.6;
 		}
 
-		LeftBorder += 0.6;
-		RightBorder += 0.6;
-		CurrentStoragePosition++;
 	}
 	else if (VariantOfDivision == 3)
 	{
@@ -45,10 +43,14 @@ void RandomGenerator::BarChart(double Storage[100], int VariantOfDivision)
 {
 	Frequency(Storage, VariantOfDivision);
 
+	double sum = 0;
 	if (VariantOfDivision == 1)
 	{
 		for (int i = 0; i < 10; i++)
+		{
 			cout << "[" << double(i) / 10 << "," << double(i + 1) / 10 << "]" << "  " << Division[i] / 100 << endl;
+			sum += Division[i] / 100;
+		}
 
 	}
 	else if (VariantOfDivision == 2)
@@ -60,14 +62,18 @@ void RandomGenerator::BarChart(double Storage[100], int VariantOfDivision)
 			cout << "[" << LeftBorder << "," << RightBorder  << "]" << "  " << Division[i] / 100 << endl;
 			LeftBorder += 0.6;
 			RightBorder += 0.6;
+			sum += Division[i] / 100;
 		}
 	}
 	else if (VariantOfDivision == 3)
 	{
 		for (int i = 0; i < 10; i++)
+		{
 			cout << "[" << i * 10 << "," << (i + 1) * 10 << "]" << "  " << Division[i] / 100 << endl;
+			sum += Division[i] / 100;
+		}
 	}
-
+	cout << "sum: " << sum << endl;
 }
 
 void RandomGenerator::BarChartForLinearMethod()
@@ -164,6 +170,7 @@ void RandomGenerator::ThreeSigmaRule()
 		{
 			RandomNumber = FirstStorage[1 + rand() % 100];
 			Sum += RandomNumber;
+			cout << RandomNumber << endl;
 		}
 
 		Xn = (Sum - 6);
