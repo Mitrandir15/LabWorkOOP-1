@@ -41,7 +41,7 @@ void RandomGenerator::Frequency(double Storage[100], int VariantOfDivision)
 
 }
 
-void RandomGenerator::Statistics(double Storage[100], int VariantOfDivision)
+void RandomGenerator::BarChart(double Storage[100], int VariantOfDivision)
 {
 	Frequency(Storage, VariantOfDivision);
 
@@ -70,16 +70,16 @@ void RandomGenerator::Statistics(double Storage[100], int VariantOfDivision)
 
 }
 
-void RandomGenerator::StaticticsForLinearMethod()
+void RandomGenerator::BarChartForLinearMethod()
 {
 	LinearCongruentialMethod();
-	Statistics(FirstStorage, 1);
+	BarChart(FirstStorage, 1);
 }
 
-void RandomGenerator::StaticticsForQuadraticMethod()
+void RandomGenerator::BarChartForQuadraticMethod()
 {
 	QuadraticCongruentialMethod();
-	Statistics(SecondStorage, 1);
+	BarChart(SecondStorage, 1);
 }
 
 void RandomGenerator::LinearCongruentialMethod()
@@ -120,7 +120,7 @@ void RandomGenerator::FibonacciNumbers()
 		FrequncyStorage[i] = double(Xn) / M;
 	}
 
-	Statistics(FrequncyStorage, 1);
+	BarChart(FrequncyStorage, 1);
 }
 
 void RandomGenerator::InverseCongruentialSequence()
@@ -134,7 +134,7 @@ void RandomGenerator::InverseCongruentialSequence()
 		FrequncyStorage[i] = double(Xn) / M;
 	}
 
-	Statistics(FrequncyStorage, 1);
+	BarChart(FrequncyStorage, 1);
 }
 
 void RandomGenerator::MergeMethod()
@@ -149,7 +149,7 @@ void RandomGenerator::MergeMethod()
 		FrequncyStorage[i] = Xn;
 	}
 
-	Statistics(FrequncyStorage, 1);
+	BarChart(FrequncyStorage, 1);
 }
 
 void RandomGenerator::ThreeSigmaRule()
@@ -171,7 +171,7 @@ void RandomGenerator::ThreeSigmaRule()
 		Sum = 0;
 	}
 
-	Statistics(FrequncyStorage, 2);
+	BarChart(FrequncyStorage, 2);
 }
 
 void RandomGenerator::PolarCoordinateMethod()
@@ -181,7 +181,7 @@ void RandomGenerator::PolarCoordinateMethod()
 	for (int i = 0; i < 50; i++)
 		PolarFirstIteration(i);
 
-	Statistics(FrequncyStorage, 2);
+	BarChart(FrequncyStorage, 2);
 }
 
 void RandomGenerator::PolarFirstIteration(int i)
@@ -217,7 +217,7 @@ void RandomGenerator::MethodOfIntegralRelations()
 	for (int i = 0; i < 100; i++)
 		FrequncyStorage[i] = Iteration8(FirstStorage[0 + rand() % 100], FirstStorage[0 + rand() % 100]);
 
-	Statistics(FrequncyStorage, 2);
+	BarChart(FrequncyStorage, 2);
 }
 
 double RandomGenerator::Iteration8(double x, double y)
@@ -243,7 +243,7 @@ void RandomGenerator::LogarithmMethod()
 		FrequncyStorage[i] = Xn;
 	}
 
-	Statistics(FrequncyStorage, 3);
+	BarChart(FrequncyStorage, 3);
 }
 
 void RandomGenerator::ArensMethod()
@@ -253,7 +253,7 @@ void RandomGenerator::ArensMethod()
 	for (int i = 0; i < 100; i++)
 		FrequncyStorage[i] = ArensFirstIteration();
 
-	Statistics(FrequncyStorage, 3);
+	BarChart(FrequncyStorage, 3);
 }
 
 double RandomGenerator::ArensFirstIteration()

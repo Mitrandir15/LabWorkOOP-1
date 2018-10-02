@@ -15,8 +15,8 @@ void main()
 	RandomGenerator random;
 	switch (choice)
 	{
-	case 1: random.StaticticsForLinearMethod(); break;
-	case 2: random.StaticticsForQuadraticMethod(); break;
+	case 1: random.BarChartForLinearMethod(); break;
+	case 2: random.BarChartForQuadraticMethod(); break;
 	case 3: random.FibonacciNumbers(); break;
 	case 4: random.InverseCongruentialSequence(); break;
 	case 5: random.MergeMethod(); break;

@@ -16,9 +16,9 @@ public:
 	void LogarithmMethod();
 	void ArensMethod();
 
-	void StaticticsForLinearMethod();
-	void StaticticsForQuadraticMethod();
-	void Statistics(double Storage[100], int VariantOfDivision);
+	void BarChartForLinearMethod();
+	void BarChartForQuadraticMethod();
+	void BarChart(double Storage[100], int VariantOfDivision);
 	void Frequency(double Storage[100], int VariantOfDivision);
 
 private:
